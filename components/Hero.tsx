@@ -6,10 +6,10 @@ import { personalInfo } from "@/data/portfolio-data";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 px-4">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 px-6 md:px-4">
       {/* Background gradient effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 animate-gradient-x"></div>
-      
+
       {/* Animated circles */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: "2s" }}></div>

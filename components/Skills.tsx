@@ -53,7 +53,7 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="py-5 px-4 relative overflow-hidden scroll-mt-20">
+    <section id="skills" className="py-5 px-6 md:px-4 relative overflow-hidden scroll-mt-20">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent"></div>
 
@@ -81,50 +81,49 @@ export default function Skills() {
 
             {/* Icons positioned on the circle */}
             <div className="absolute top-1/2 left-1/2" style={{ transform: 'translate(-50%, -50%)' }}>
-            {categoryConfig.map((category, index) => {
-              const radius = 180;
-              const angle = (category.angle * Math.PI) / 180;
-              const x = Math.cos(angle) * radius;
-              const y = Math.sin(angle) * radius;
-              
-              return (
-              <motion.div
-                key={category.name}
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="absolute"
-                style={{
-                  left: `${x}px`,
-                  top: `${y}px`,
-                  marginLeft: '-48px',
-                  marginTop: '-48px'
-                }}
-              >
-                <motion.button
-                  onHoverStart={() => setSelectedCategory(category.name)}
-                  onClick={() => setSelectedCategory(category.name)}
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`relative group`}
-                >
-                  <div className={`w-24 h-24 rounded-full bg-gradient-to-br ${category.color} flex items-center justify-center shadow-lg transition-all duration-300 ${
-                    selectedCategory === category.name ? 'ring-4 ring-white/30' : ''
-                  }`}>
-                    <category.icon className="text-4xl text-white" />
-                  </div>
+              {categoryConfig.map((category, index) => {
+                const radius = 180;
+                const angle = (category.angle * Math.PI) / 180;
+                const x = Math.cos(angle) * radius;
+                const y = Math.sin(angle) * radius;
+
+                return (
                   <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap bg-black/80 px-3 py-1 rounded-full text-sm"
+                    key={category.name}
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="absolute"
+                    style={{
+                      left: `${x}px`,
+                      top: `${y}px`,
+                      marginLeft: '-48px',
+                      marginTop: '-48px'
+                    }}
                   >
-                    {category.name}
+                    <motion.button
+                      onHoverStart={() => setSelectedCategory(category.name)}
+                      onClick={() => setSelectedCategory(category.name)}
+                      whileHover={{ scale: 1.2 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`relative group`}
+                    >
+                      <div className={`w-24 h-24 rounded-full bg-gradient-to-br ${category.color} flex items-center justify-center shadow-lg transition-all duration-300 ${selectedCategory === category.name ? 'ring-4 ring-white/30' : ''
+                        }`}>
+                        <category.icon className="text-4xl text-white" />
+                      </div>
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap bg-black/80 px-3 py-1 rounded-full text-sm"
+                      >
+                        {category.name}
+                      </motion.div>
+                    </motion.button>
                   </motion.div>
-                </motion.button>
-              </motion.div>
-            );
-            })}
+                );
+              })}
             </div>
           </div>
 
@@ -134,11 +133,10 @@ export default function Skills() {
               <button
                 key={category.name}
                 onClick={() => setSelectedCategory(category.name)}
-                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 ${
-                  selectedCategory === category.name
+                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 ${selectedCategory === category.name
                     ? `bg-gradient-to-r ${category.color}`
                     : "glass-effect hover:bg-white/10"
-                }`}
+                  }`}
               >
                 <category.icon />
                 {category.name}
@@ -161,9 +159,8 @@ export default function Skills() {
                   <div className="flex items-center gap-3 mb-6">
                     {categoryConfig.find(c => c.name === selectedCategory) && (
                       <>
-                        <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${
-                          categoryConfig.find(c => c.name === selectedCategory)?.color
-                        } flex items-center justify-center`}>
+                        <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${categoryConfig.find(c => c.name === selectedCategory)?.color
+                          } flex items-center justify-center`}>
                           {(() => {
                             const CategoryIcon = categoryConfig.find(c => c.name === selectedCategory)?.icon;
                             return CategoryIcon ? <CategoryIcon className="text-2xl text-white" /> : null;
@@ -197,9 +194,8 @@ export default function Skills() {
                             </div>
                           )}
                           <p className="text-sm font-semibold">{skill.name}</p>
-                          <div className={`w-full h-1 rounded-full bg-gradient-to-r ${
-                            categoryConfig.find(c => c.name === selectedCategory)?.color
-                          }`}></div>
+                          <div className={`w-full h-1 rounded-full bg-gradient-to-r ${categoryConfig.find(c => c.name === selectedCategory)?.color
+                            }`}></div>
                         </motion.div>
                       );
                     })}

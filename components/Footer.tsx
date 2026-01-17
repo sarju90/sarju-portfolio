@@ -12,7 +12,7 @@ export default function Footer() {
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
 
-      <div className="container mx-auto max-w-7xl px-4 py-12 relative z-10">
+      <div className="container mx-auto max-w-7xl px-6 md:px-4 py-12 relative z-10">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* About */}
           <motion.div
@@ -27,7 +27,7 @@ export default function Footer() {
             <p className="text-gray-400 mb-4">
               {personalInfo.title} passionate about creating scalable, innovative web solutions.
             </p>
-         
+
           </motion.div>
 
           {/* Quick Links */}

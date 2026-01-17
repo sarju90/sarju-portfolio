@@ -2,11 +2,11 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { 
-  FaGraduationCap, 
-  FaAward, 
-  FaBookOpen, 
-  FaMapMarkerAlt, 
+import {
+  FaGraduationCap,
+  FaAward,
+  FaBookOpen,
+  FaMapMarkerAlt,
   FaCalendar,
   FaStar,
   FaCode,
@@ -43,7 +43,7 @@ export default function Education() {
   ];
 
   return (
-    <section id="education" className="py-20 px-4 relative overflow-hidden scroll-mt-20">
+    <section id="education" className="py-20 px-6 md:px-4 relative overflow-hidden scroll-mt-20">
       {/* Background effects */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
@@ -82,7 +82,7 @@ export default function Education() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-col md:flex-row md:flex-wrap justify-center gap-4 mb-12 w-full max-w-4xl mx-auto"
         >
           {tabs.map((tab) => (
             <motion.button
@@ -90,18 +90,17 @@ export default function Education() {
               onClick={() => setActiveTab(tab.id)}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className={`flex items-center gap-3 px-6 py-4 rounded-xl transition-all duration-300 min-w-[280px] ${
-                activeTab === tab.id
+              className={`flex items-center gap-3 px-4 sm:px-6 py-4 rounded-xl transition-all duration-300 w-full md:min-w-[280px] md:flex-1 ${activeTab === tab.id
                   ? "bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg shadow-purple-500/30"
                   : "glass-effect hover:bg-white/10"
-              }`}
+                }`}
             >
-              <tab.icon className={`text-xl ${activeTab === tab.id ? "text-white" : "text-purple-400"}`} />
-              <div className="text-left">
-                <div className={`font-semibold ${activeTab === tab.id ? "text-white" : "text-gray-200"}`}>
+              <tab.icon className={`text-xl flex-shrink-0 ${activeTab === tab.id ? "text-white" : "text-purple-400"}`} />
+              <div className="text-left flex-1 min-w-0">
+                <div className={`font-semibold text-sm sm:text-base break-words ${activeTab === tab.id ? "text-white" : "text-gray-200"}`}>
                   {tab.label}
                 </div>
-                <div className={`text-xs ${activeTab === tab.id ? "text-white/80" : "text-gray-400"}`}>
+                <div className={`text-xs break-words ${activeTab === tab.id ? "text-white/80" : "text-gray-400"}`}>
                   {tab.description}
                 </div>
               </div>
@@ -142,29 +141,29 @@ function AcademicContent({ data }: { data: typeof education.academic }) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
-          className="glass-effect rounded-2xl p-6 md:p-8 hover:bg-white/5 transition-all duration-300"
+          className="glass-effect rounded-2xl p-4 sm:p-6 md:p-8 hover:bg-white/5 transition-all duration-300"
         >
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {/* Left Side - Main Info */}
-            <div>
+            <div className="min-w-0">
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center border border-purple-500/30">
-                  <FaGraduationCap className="text-2xl text-purple-400" />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 rounded-xl bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center border border-purple-500/30">
+                  <FaGraduationCap className="text-xl sm:text-2xl text-purple-400" />
                 </div>
-                <div>
-                  <h3 className="text-xl md:text-2xl font-bold text-white">{item.degree}</h3>
-                  <p className="text-purple-400 font-medium">{item.institution}</p>
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white break-words">{item.degree}</h3>
+                  <p className="text-purple-400 font-medium break-words">{item.institution}</p>
                 </div>
               </div>
 
               <div className="flex flex-wrap gap-4 text-gray-400 text-sm mb-4">
                 <span className="flex items-center gap-2">
-                  <FaMapMarkerAlt className="text-purple-400" />
-                  {item.location}
+                  <FaMapMarkerAlt className="text-purple-400 flex-shrink-0" />
+                  <span className="break-words">{item.location}</span>
                 </span>
                 <span className="flex items-center gap-2">
-                  <FaCalendar className="text-purple-400" />
-                  {item.duration}
+                  <FaCalendar className="text-purple-400 flex-shrink-0" />
+                  <span>{item.duration}</span>
                 </span>
               </div>
 
@@ -174,7 +173,7 @@ function AcademicContent({ data }: { data: typeof education.academic }) {
                 </div>
               )}
 
-              <p className="text-gray-300 leading-relaxed">{item.description}</p>
+              <p className="text-gray-300 leading-relaxed break-words">{item.description}</p>
 
               {/* Key Subjects */}
               {item.subjects && (
@@ -227,9 +226,9 @@ function AcademicContent({ data }: { data: typeof education.academic }) {
                         {typeof project === 'string' ? (
                           project
                         ) : (
-                          <a 
-                            href={project.url} 
-                            target="_blank" 
+                          <a
+                            href={project.url}
+                            target="_blank"
                             rel="noopener noreferrer"
                             className="hover:text-cyan-400 transition-colors flex items-center gap-1"
                           >
@@ -258,7 +257,7 @@ function ProfessionalContent({ data }: { data: typeof education.professional }) 
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.4 }}
-      className="grid md:grid-cols-2 gap-6"
+      className="grid grid-cols-1 md:grid-cols-2 gap-6"
     >
       {data.map((item, index) => (
         <motion.div
@@ -266,18 +265,18 @@ function ProfessionalContent({ data }: { data: typeof education.professional }) 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
-          className="glass-effect rounded-2xl p-6 hover:bg-white/5 transition-all duration-300 group"
+          className="glass-effect rounded-2xl p-4 sm:p-6 hover:bg-white/5 transition-all duration-300 group"
         >
-          <div className="flex items-start justify-between mb-4">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center border border-amber-500/30">
+          <div className="flex items-start justify-between gap-3 mb-4">
+            <div className="flex items-start gap-3 min-w-0 flex-1">
+              <div className="w-12 h-12 flex-shrink-0 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center border border-amber-500/30">
                 <FaAward className="text-xl text-amber-400" />
               </div>
-              <div>
-                <h3 className="text-lg font-bold text-white group-hover:text-amber-400 transition-colors">
+              <div className="min-w-0 flex-1">
+                <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-amber-400 transition-colors break-words">
                   {item.title}
                 </h3>
-                <p className="text-amber-400 text-sm font-medium">{item.provider}</p>
+                <p className="text-amber-400 text-sm font-medium break-words">{item.provider}</p>
                 <p className="text-gray-500 text-sm">{item.year}</p>
               </div>
             </div>
@@ -286,14 +285,14 @@ function ProfessionalContent({ data }: { data: typeof education.professional }) 
                 href={item.credentialUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-amber-400 transition-colors"
+                className="text-gray-400 hover:text-amber-400 transition-colors flex-shrink-0"
               >
                 <FaExternalLinkAlt />
               </a>
             )}
           </div>
 
-          <p className="text-gray-300 text-sm mb-4 leading-relaxed">{item.description}</p>
+          <p className="text-gray-300 text-sm mb-4 leading-relaxed break-words">{item.description}</p>
 
           {/* Skills Gained */}
           {item.skills && (
@@ -325,7 +324,7 @@ function LifelongContent({ data }: { data: typeof education.lifelong }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.4 }}
-      className="grid md:grid-cols-2 gap-6"
+      className="grid grid-cols-1 md:grid-cols-2 gap-6"
     >
       {data.map((item, index) => (
         <motion.div
@@ -333,29 +332,26 @@ function LifelongContent({ data }: { data: typeof education.lifelong }) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
-          className="glass-effect rounded-2xl p-6 hover:bg-white/5 transition-all duration-300 group"
+          className="glass-effect rounded-2xl p-4 sm:p-6 hover:bg-white/5 transition-all duration-300 group"
         >
-          <div className="flex items-start justify-between mb-4">
-            <div className="flex items-start gap-4">
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center border ${
-                item.status === "completed" 
-                  ? "bg-gradient-to-br from-emerald-500/20 to-green-500/20 border-emerald-500/30"
-                  : "bg-gradient-to-br from-amber-500/20 to-yellow-500/20 border-amber-500/30"
-              }`}>
-                <FaBookOpen className={`text-xl ${
-                  item.status === "completed" ? "text-emerald-400" : "text-amber-400"
-                }`} />
+          <div className="flex items-start justify-between gap-3 mb-4">
+            <div className="flex items-start gap-3 min-w-0 flex-1">
+              <div className={`w-12 h-12 flex-shrink-0 rounded-xl flex items-center justify-center border ${item.status === "completed"
+                ? "bg-gradient-to-br from-emerald-500/20 to-green-500/20 border-emerald-500/30"
+                : "bg-gradient-to-br from-amber-500/20 to-yellow-500/20 border-amber-500/30"
+                }`}>
+                <FaBookOpen className={`text-xl ${item.status === "completed" ? "text-emerald-400" : "text-amber-400"
+                  }`} />
               </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-3 flex-wrap">
-                  <h3 className="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">
+              <div className="flex-1 min-w-0">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
+                  <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-cyan-400 transition-colors break-words">
                     {item.title}
                   </h3>
-                  <span className={`inline-flex items-center gap-1.5 px-3 py-1 text-xs rounded-full font-medium ${
-                    item.status === "completed"
-                      ? "bg-cyan-500/20 text-cyan-400 border border-cyan-500/40"
-                      : "bg-cyan-500/20 text-cyan-400 border border-cyan-500/40"
-                  }`}>
+                  <span className={`inline-flex items-center gap-1.5 px-3 py-1 text-xs rounded-full font-medium w-fit flex-shrink-0 ${item.status === "completed"
+                    ? "bg-cyan-500/20 text-cyan-400 border border-cyan-500/40"
+                    : "bg-cyan-500/20 text-cyan-400 border border-cyan-500/40"
+                    }`}>
                     {item.status === "completed" ? (
                       <>
                         <FaCheckCircle className="text-xs" />
@@ -372,7 +368,7 @@ function LifelongContent({ data }: { data: typeof education.lifelong }) {
                     )}
                   </span>
                 </div>
-                <p className="text-cyan-400 text-sm font-medium">{item.source}</p>
+                <p className="text-cyan-400 text-sm font-medium break-words">{item.source}</p>
                 <p className="text-gray-500 text-sm">{item.duration}</p>
               </div>
             </div>
@@ -381,14 +377,14 @@ function LifelongContent({ data }: { data: typeof education.lifelong }) {
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-cyan-400 transition-colors"
+                className="text-gray-400 hover:text-cyan-400 transition-colors flex-shrink-0"
               >
                 <FaExternalLinkAlt />
               </a>
             )}
           </div>
 
-          <p className="text-gray-300 text-sm mb-4 leading-relaxed">{item.description}</p>
+          <p className="text-gray-300 text-sm mb-4 leading-relaxed break-words">{item.description}</p>
 
           {/* Skills & Topics */}
           {item.topics && (
@@ -398,7 +394,7 @@ function LifelongContent({ data }: { data: typeof education.lifelong }) {
                 {item.topics.map((topic, idx) => (
                   <span
                     key={idx}
-                    className="px-2.5 py-1 text-xs rounded-full glass-effect border border-cyan-500/20 text-gray-300"
+                    className="px-2.5 py-1 text-xs rounded-full glass-effect border border-cyan-500/20 text-gray-300 break-words"
                   >
                     {topic}
                   </span>

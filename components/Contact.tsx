@@ -6,7 +6,7 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaWhatsapp }
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 px-4 relative overflow-hidden scroll-mt-20">
+    <section id="contact" className="py-20 px-6 md:px-4 relative overflow-hidden scroll-mt-20">
       {/* Background effects */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
 
@@ -22,7 +22,7 @@ export default function Contact() {
             <span className="gradient-text">Let's Connect</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-            Whether you have a project in mind, need expert advice, or want to collaborate on an exciting idea, I'm here to help. 
+            Whether you have a project in mind, need expert advice, or want to collaborate on an exciting idea, I'm here to help.
             Let's connect and discuss your project requirements in detail.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-4"></div>
@@ -39,7 +39,7 @@ export default function Contact() {
           >
             <div className="glass-effect rounded-xl p-6">
               <h3 className="text-2xl font-bold mb-6 gradient-text text-center">Contact Info</h3>
-              
+
               <div className="grid md:grid-cols-3 gap-4">
                 <a
                   href={`mailto:${personalInfo.email}`}

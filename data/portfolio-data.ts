@@ -153,7 +153,7 @@ export const education = {
     {
       degree: "Higher Secondary Education",
       institution: "Gujarat Secondary and Higher Secondary Education Board",
-      location: "Gujarat",
+      location: "Rajkot, Gujarat",
       duration: "2017 – 2019",
       description: "Completed higher secondary education with Science stream, focusing on Mathematics, Physics, and Computer Science. Developed strong analytical and problem-solving skills.",
       subjects: [
@@ -206,40 +206,40 @@ export const education = {
   ],
   lifelong: [
     {
-      title: "Advanced TypeScript Patterns",
-      source: "TypeScript Deep Dive",
-      duration: "4 weeks",
-      status: "in-progress" as const,
-      description: "Deep dive into advanced TypeScript features, type manipulation, and enterprise-level patterns for robust application development.",
-      topics: ["TypeScript", "Advanced Types", "Generics", "Decorators"],
-      url: "https://basarat.gitbook.io/typescript/"
-    },
-    {
-      title: "Clean Code: A Handbook of Agile Software Craftsmanship",
-      source: "Robert C. Martin",
-      duration: "3 weeks",
-      status: "completed" as const,
-      description: "Comprehensive guide to writing clean, maintainable code with practical examples and principles for software development excellence.",
-      topics: ["Code Quality", "Refactoring", "Best Practices", "Software Craftsmanship"],
-      url: "https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
-    },
-    {
-      title: "The Changelog Podcast",
-      source: "Changelog",
+      title: "Supabase Crash Course - Build a Full Stack App",
+      source: "YouTube / Video",
       duration: "Ongoing",
       status: "in-progress" as const,
-      description: "Regular listening to stay updated with latest tech trends, open source projects, and developer community insights.",
-      topics: ["Industry Trends", "Open Source", "Developer Stories", "Tech Leadership"],
-      url: "https://changelog.com/podcast"
+      description: "Comprehensive introduction to Supabase. This full course covers database management, authentication, and standard backend patterns for modern web apps.",
+      topics: ["Supabase", "Database Design", "Auth & RLS", "PostgreSQL"],
+      url: "https://youtu.be/Q7P20fHJlm4?si=7H_bJK62iJloU2ZI"
     },
     {
-      title: "React Server Components Deep Dive",
-      source: "YouTube / Vercel",
-      duration: "2 weeks",
+      title: "Next.js Full Course - Beginner to Advanced (7 Hrs)",
+      source: "YouTube / Codevolution",
+      duration: "Completed",
       status: "completed" as const,
-      description: "Comprehensive tutorial series covering React Server Components, streaming, and new rendering patterns in React 18.",
-      topics: ["React 18", "Server Components", "Streaming", "Performance"],
-      url: "https://www.youtube.com/watch?v=TQQPAU21ZUw"
+      description: "The complete guide by Codevolution. A 7-hour deep dive covering every aspect of Next.js from routing and rendering to advanced server actions and deployment.",
+      topics: ["Next.js 15", "App Router", "Server Components", "Data Fetching"],
+      url: "https://www.youtube.com/watch?v=ZjAqacIC_3c"
+    },
+    {
+      title: "Namaste JavaScript (Advanced JS)",
+      source: "YouTube / Akshay Saini",
+      duration: "Completed",
+      status: "completed" as const,
+      description: "Mastering the core engines of JavaScript. Deep understanding of Hoisting, Closures, Event Loop, Prototypes, and Asynchronous JS under the hood.",
+      topics: ["Closures", "Event Loop", "Promises", "Execution Context"],
+      url: "https://www.youtube.com/playlist?list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP"
+    },
+    {
+      title: "System Design Primer",
+      source: "GitHub / YouTube",
+      duration: "Completed",
+      status: "completed" as const,
+      description: "Learning how to design large-scale systems. Covering load balancing, caching strategies, database sharding, and microservices architecture.",
+      topics: ["Scalability", "System Architecture", "Load Balancing", "Caching"],
+      url: "https://github.com/donnemartin/system-design-primer"
     }
   ]
 };
