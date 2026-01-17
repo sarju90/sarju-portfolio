@@ -32,3 +32,41 @@ export interface Testimonial {
   message: string;
   project: string;
 }
+
+// Education Types
+export interface AcademicEducation {
+  degree: string;
+  institution: string;
+  location: string;
+  duration: string;
+  cgpi?: string;
+  description: string;
+  subjects?: string[];
+  achievements?: string[];
+  projects?: string[];
+}
+
+export interface ProfessionalCertification {
+  title: string;
+  provider: string;
+  year: string;
+  description: string;
+  skills?: string[];
+  credentialUrl?: string;
+}
+
+export interface LifelongLearning {
+  title: string;
+  source: string;
+  duration: string;
+  status: 'completed' | 'in-progress';
+  description: string;
+  topics?: string[];
+  url?: string;
+}
+
+export interface Education {
+  academic: AcademicEducation[];
+  professional: ProfessionalCertification[];
+  lifelong: LifelongLearning[];
+}

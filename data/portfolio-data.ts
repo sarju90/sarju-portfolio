@@ -116,3 +116,130 @@ export const experiences: Experience[] = [
     type: "education"
   }
 ];
+
+// Education Data for Knowledge Section
+export const education = {
+  academic: [
+    {
+      degree: "Bachelor of Technology (B.Tech)",
+      institution: "Charusat University",
+      location: "Changa, Gujarat",
+      duration: "2019 – 2023",
+      cgpi: "8.99",
+      description: "Specialized in Information Technology with a focus on software development, data structures, and modern web technologies. Built a strong foundation in programming paradigms and software engineering principles.",
+      subjects: [
+        "Data Structures & Algorithms",
+        "Object-Oriented Programming",
+        "Database Management Systems",
+        "Computer Networks",
+        "Software Engineering",
+        "Web Development",
+        "Operating Systems",
+        "Computer Graphics"
+      ],
+      achievements: [
+        "Graduated with Distinction (CGPI 8.99/10)",
+        "Active member of coding club and tech societies",
+        "Participated in multiple hackathons and coding competitions",
+        "Led team projects and collaborative development initiatives"
+      ],
+      projects: [
+        { name: "Shofy - Full-Stack E-commerce Platform", url: "https://shofy-frontend.vercel.app/" },
+        { name: "EventHive - Event Management Platform", url: "https://sarju-eventhive.vercel.app/" },
+        { name: "Smarty Shop - E-commerce Platform", url: "https://smarty-shop.vercel.app/" },
+        { name: "Portfolio Website with Responsive Design", url: "#" }
+      ]
+    },
+    {
+      degree: "Higher Secondary Education",
+      institution: "Gujarat Secondary and Higher Secondary Education Board",
+      location: "Gujarat",
+      duration: "2017 – 2019",
+      description: "Completed higher secondary education with Science stream, focusing on Mathematics, Physics, and Computer Science. Developed strong analytical and problem-solving skills.",
+      subjects: [
+        "Mathematics",
+        "Physics",
+        "Chemistry",
+        "Computer Science",
+        "English"
+      ],
+      achievements: [
+        "Active participation in science exhibitions and competitions",
+        "School-level programming competition winner",
+        "Mathematics and Computer Science merit recognition"
+      ]
+    }
+  ],
+  professional: [
+    {
+      title: "Advanced React.js Development",
+      provider: "Meta (Facebook)",
+      year: "2023",
+      description: "Comprehensive certification covering advanced React concepts, performance optimization techniques, and modern development practices.",
+      skills: ["React.js", "React Hooks", "Context API", "Performance Optimization"],
+      credentialUrl: "https://www.coursera.org/account/accomplishments/professional-cert/react"
+    },
+    {
+      title: "Next.js Conference 2023",
+      provider: "Vercel",
+      year: "Oct 2023",
+      description: "Attended virtual conference learning about latest Next.js features, performance improvements, and modern deployment strategies.",
+      skills: ["Next.js 14", "App Router", "Server Components", "Edge Runtime"],
+      credentialUrl: "https://nextjs.org/conf"
+    },
+    {
+      title: "Frontend Masters Workshop",
+      provider: "Frontend Masters",
+      year: "2023",
+      description: "Intensive workshop covering advanced frontend development techniques, testing strategies, and modern tooling.",
+      skills: ["TypeScript", "Testing", "Performance", "Accessibility"],
+      credentialUrl: "https://frontendmasters.com/"
+    },
+    {
+      title: "JavaScript Algorithms Bootcamp",
+      provider: "Udemy",
+      year: "2022",
+      description: "Intensive bootcamp focusing on algorithmic thinking, data structure implementation, and coding interview preparation.",
+      skills: ["Algorithms", "Data Structures", "Problem Solving", "Big O Notation"],
+      credentialUrl: "https://www.udemy.com/certificate/javascript-algorithms"
+    }
+  ],
+  lifelong: [
+    {
+      title: "Advanced TypeScript Patterns",
+      source: "TypeScript Deep Dive",
+      duration: "4 weeks",
+      status: "in-progress" as const,
+      description: "Deep dive into advanced TypeScript features, type manipulation, and enterprise-level patterns for robust application development.",
+      topics: ["TypeScript", "Advanced Types", "Generics", "Decorators"],
+      url: "https://basarat.gitbook.io/typescript/"
+    },
+    {
+      title: "Clean Code: A Handbook of Agile Software Craftsmanship",
+      source: "Robert C. Martin",
+      duration: "3 weeks",
+      status: "completed" as const,
+      description: "Comprehensive guide to writing clean, maintainable code with practical examples and principles for software development excellence.",
+      topics: ["Code Quality", "Refactoring", "Best Practices", "Software Craftsmanship"],
+      url: "https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+    },
+    {
+      title: "The Changelog Podcast",
+      source: "Changelog",
+      duration: "Ongoing",
+      status: "in-progress" as const,
+      description: "Regular listening to stay updated with latest tech trends, open source projects, and developer community insights.",
+      topics: ["Industry Trends", "Open Source", "Developer Stories", "Tech Leadership"],
+      url: "https://changelog.com/podcast"
+    },
+    {
+      title: "React Server Components Deep Dive",
+      source: "YouTube / Vercel",
+      duration: "2 weeks",
+      status: "completed" as const,
+      description: "Comprehensive tutorial series covering React Server Components, streaming, and new rendering patterns in React 18.",
+      topics: ["React 18", "Server Components", "Streaming", "Performance"],
+      url: "https://www.youtube.com/watch?v=TQQPAU21ZUw"
+    }
+  ]
+};
