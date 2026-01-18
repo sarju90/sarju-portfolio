@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "google-site-verification-code", // Placeholder for user to fill
+    google: "j0RzvZJV8zHtaTGTG7_QTEAZqCg_auXpPvRFCFfPsTk",
   },
 };
 
