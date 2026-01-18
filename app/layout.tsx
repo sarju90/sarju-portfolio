@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sarju-dharsandiya.vercel.app"),
+  metadataBase: new URL("https://sarju-portfolio.vercel.app"),
   title: {
     default: `${personalInfo.name} | ${personalInfo.title}`,
     template: `%s | ${personalInfo.name}`,
@@ -34,12 +34,12 @@ export const metadata: Metadata = {
     "Gujarat",
     "India"
   ],
-  authors: [{ name: personalInfo.name, url: "https://sarju-dharsandiya.vercel.app" }],
+  authors: [{ name: personalInfo.name, url: "https://sarju-portfolio.vercel.app" }],
   creator: personalInfo.name,
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://sarju-dharsandiya.vercel.app",
+    url: "https://sarju-portfolio.vercel.app",
     title: `${personalInfo.name} | ${personalInfo.title}`,
     description: personalInfo.bio.replace(/\n/g, " ").slice(0, 200) + "...",
     siteName: `${personalInfo.name} Portfolio`,
@@ -83,8 +83,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     "name": personalInfo.name,
-    "url": "https://sarju-dharsandiya.vercel.app",
-    "image": "https://sarju-dharsandiya.vercel.app/profile.jpg",
+    "url": "https://sarju-portfolio.vercel.app",
+    "image": "https://sarju-portfolio.vercel.app/profile.jpg",
     "sameAs": [
       personalInfo.github,
       personalInfo.linkedin,
