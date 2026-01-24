@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { personalInfo } from "@/data/portfolio-data";
+import { FileText } from "lucide-react";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -82,13 +83,15 @@ export default function Navigation() {
               </motion.a>
             ))}
             <motion.a
-              href="#contact"
-              onClick={(e) => smoothScroll(e, "#contact")}
-              className="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
+              href="https://drive.google.com/file/d/13-1AJc1rRbCTYd7b3wN18tr8PaIfc_5I/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 flex items-center gap-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Hire Me
+              <FileText size={18} />
+              CV
             </motion.a>
           </div>
 
@@ -99,7 +102,7 @@ export default function Navigation() {
           >
             <div className="w-6 h-0.5 bg-white mb-1"></div>
             <div className="w-6 h-0.5 bg-white mb-1"></div>
-            <div className="w-6 h-0.5 bg-white"></div>
+            <div className="w-6 h-0.5 bg-white mb-1"></div>
           </button>
         </div>
 
@@ -121,11 +124,13 @@ export default function Navigation() {
               </a>
             ))}
             <a
-              href="#contact"
-              onClick={(e) => smoothScroll(e, "#contact")}
-              className="block mt-4 px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full font-semibold text-center"
+              href="https://drive.google.com/file/d/13-1AJc1rRbCTYd7b3wN18tr8PaIfc_5I/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full font-semibold text-center flex items-center justify-center gap-2 w-full"
             >
-              Hire Me
+              <FileText size={18} />
+              View CV
             </a>
           </motion.div>
         )}

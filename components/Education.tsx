@@ -12,7 +12,8 @@ import {
   FaCode,
   FaExternalLinkAlt,
   FaCheckCircle,
-  FaSpinner
+  FaSpinner,
+  FaBolt
 } from "react-icons/fa";
 import { education } from "@/data/portfolio-data";
 
@@ -43,7 +44,7 @@ export default function Education() {
   ];
 
   return (
-    <section id="education" className="py-20 px-6 md:px-4 relative overflow-hidden scroll-mt-20">
+    <section id="education" className="px-6 md:px-4 relative overflow-hidden scroll-mt-20">
       {/* Background effects */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
@@ -91,8 +92,8 @@ export default function Education() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className={`flex items-center gap-3 px-4 sm:px-6 py-4 rounded-xl transition-all duration-300 w-full md:min-w-[280px] md:flex-1 ${activeTab === tab.id
-                  ? "bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg shadow-purple-500/30"
-                  : "glass-effect hover:bg-white/10"
+                ? "bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg shadow-purple-500/30"
+                : "glass-effect hover:bg-white/10"
                 }`}
             >
               <tab.icon className={`text-xl flex-shrink-0 ${activeTab === tab.id ? "text-white" : "text-purple-400"}`} />
@@ -204,7 +205,7 @@ function AcademicContent({ data }: { data: typeof education.academic }) {
                   <ul className="space-y-2">
                     {item.achievements.map((achievement, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-gray-300 text-sm">
-                        <FaStar className="text-yellow-500 mt-1 flex-shrink-0" />
+                        <FaStar className="text-yellow-500 mt-[3px] flex-shrink-0" />
                         {achievement}
                       </li>
                     ))}
@@ -222,7 +223,7 @@ function AcademicContent({ data }: { data: typeof education.academic }) {
                   <ul className="space-y-2">
                     {item.projects.map((project, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-gray-300 text-sm">
-                        <span className="text-cyan-400 mt-1">⚡</span>
+                        <FaBolt className="text-cyan-400 mt-[3px] flex-shrink-0" />
                         {typeof project === 'string' ? (
                           project
                         ) : (
@@ -349,8 +350,8 @@ function LifelongContent({ data }: { data: typeof education.lifelong }) {
                     {item.title}
                   </h3>
                   <span className={`inline-flex items-center gap-1.5 px-3 py-1 text-xs rounded-full font-medium w-fit flex-shrink-0 ${item.status === "completed"
-                    ? "bg-cyan-500/20 text-cyan-400 border border-cyan-500/40"
-                    : "bg-cyan-500/20 text-cyan-400 border border-cyan-500/40"
+                    ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/40"
+                    : "bg-amber-500/20 text-amber-400 border border-amber-500/40"
                     }`}>
                     {item.status === "completed" ? (
                       <>
@@ -360,8 +361,8 @@ function LifelongContent({ data }: { data: typeof education.lifelong }) {
                     ) : (
                       <>
                         <span className="relative flex h-2 w-2">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
                         </span>
                         <span>in progress</span>
                       </>

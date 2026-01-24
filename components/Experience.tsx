@@ -10,7 +10,7 @@ export default function Experience() {
   const allExperiences = [...workExperiences, ...education];
 
   return (
-    <section id="experience" className="pb-20 px-6 md:px-4 relative overflow-hidden scroll-mt-20">
+    <section id="experience" className="py-20 px-6 md:px-4 relative overflow-hidden scroll-mt-20">
       {/* Background effects */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>

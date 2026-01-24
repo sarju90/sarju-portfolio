@@ -14,7 +14,7 @@ export default function Projects() {
     : projects.filter(p => p.category === selectedCategory);
 
   return (
-    <section id="projects" className="pt-5 pb-10 px-6 md:px-4 relative overflow-hidden scroll-mt-20">
+    <section id="projects" className="py-20 px-6 md:px-4 relative overflow-hidden scroll-mt-20">
       {/* Background */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
@@ -49,8 +49,8 @@ export default function Projects() {
               key={category}
               onClick={() => setSelectedCategory(category)}
               className={`px-6 py-3 rounded-full font-semibold cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg ${selectedCategory === category
-                  ? "bg-gradient-to-r from-blue-500 to-purple-500 hover:shadow-purple-500/40"
-                  : "glass-effect hover:bg-white/10 hover:shadow-blue-500/30"
+                ? "bg-gradient-to-r from-blue-500 to-purple-500 hover:shadow-purple-500/40"
+                : "glass-effect hover:bg-white/10 hover:shadow-blue-500/30"
                 }`}
             >
               {category}
@@ -67,7 +67,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="glass-effect rounded-xl overflow-hidden hover:bg-white/10 transition-all duration-300 group"
+              className="glass-effect rounded-xl overflow-hidden hover:bg-white/10 transition-all duration-300 group flex flex-col h-full"
             >
               {/* Project Image Placeholder */}
               <div className="h-48 bg-gradient-to-br from-blue-500/20 to-purple-500/20 relative overflow-hidden">
@@ -79,9 +79,9 @@ export default function Projects() {
                 </div>
               </div>
 
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-1">
                 {/* Category Badge */}
-                <span className="inline-block px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full text-xs font-semibold mb-3 border border-blue-500/30">
+                <span className="w-fit inline-block px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full text-xs font-semibold mb-3 border border-blue-500/30">
                   {project.category}
                 </span>
 
@@ -109,7 +109,7 @@ export default function Projects() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-4">
+                <div className="flex gap-4 mt-auto">
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}

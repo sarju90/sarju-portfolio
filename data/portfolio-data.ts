@@ -215,6 +215,15 @@ export const education = {
       url: "https://youtu.be/Q7P20fHJlm4?si=7H_bJK62iJloU2ZI"
     },
     {
+      title: "React Native CLI - Step by Step",
+      source: "YouTube / Hitesh Choudhary",
+      duration: "Ongoing",
+      status: "in-progress" as const,
+      description: "A complete playlist by Hitesh Choudhary covering React Native CLI. Learning to build native Android and iOS apps with advanced concepts and hooks.",
+      topics: ["React Native", "Mobile Dev", "Hooks", "Native Modules"],
+      url: "https://www.youtube.com/playlist?list=PLRAV69dS1uWSjBBJ-egNNOd4mdblt1P4c"
+    },
+    {
       title: "Next.js Full Course - Beginner to Advanced (7 Hrs)",
       source: "YouTube / Codevolution",
       duration: "Completed",

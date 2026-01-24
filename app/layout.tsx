@@ -19,9 +19,19 @@ export const metadata: Metadata = {
     default: `${personalInfo.name} | ${personalInfo.title}`,
     template: `%s | ${personalInfo.name}`,
   },
-  description: personalInfo.tagline,
+  description: `Sarju Dharsandiya is a Software Development Engineer at Zignuts Technolab in Rajkot, Gujarat. ${personalInfo.tagline}`,
   keywords: [
     "Sarju Dharsandiya",
+    "Sarju",
+    "Dharsandiya",
+    "Sarju Zignuts",
+    "Sarju Zignuts Technolab",
+    "Sarju Rajkot",
+    "Sarju Gujarat",
+    "Sarju Developer",
+    "Sarju Engineer",
+    "Sarju Web Developer",
+    "Zignuts Technolab",
     "Software Development Engineer",
     "React Developer",
     "Next.js Developer",
@@ -41,7 +51,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://sarju-portfolio.vercel.app",
     title: `${personalInfo.name} | ${personalInfo.title}`,
-    description: personalInfo.bio.replace(/\n/g, " ").slice(0, 200) + "...",
+    description: `Sarju Dharsandiya is a Software Development Engineer at Zignuts Technolab in Rajkot, Gujarat. ${personalInfo.tagline}`,
     siteName: `${personalInfo.name} Portfolio`,
     images: [
       {
@@ -55,7 +65,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${personalInfo.name} | ${personalInfo.title}`,
-    description: personalInfo.tagline,
+    description: `Sarju Dharsandiya is a Software Development Engineer at Zignuts Technolab in Rajkot, Gujarat. ${personalInfo.tagline}`,
     images: ["/opengraph-image"],
   },
   robots: {
@@ -88,7 +98,6 @@ export default function RootLayout({
     "sameAs": [
       personalInfo.github,
       personalInfo.linkedin,
-      "https://twitter.com/sarju90" // Assumed or placeholder
     ],
     "jobTitle": personalInfo.title,
     "worksFor": {
@@ -110,6 +119,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning
       >
         <script
           type="application/ld+json"
