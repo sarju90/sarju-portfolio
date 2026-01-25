@@ -13,6 +13,9 @@ export interface Project {
   liveUrl?: string;
   githubUrl?: string;
   category: string;
+  longDescription?: string;
+  features?: string[];
+  isNDA?: boolean;
 }
 
 export interface Experience {

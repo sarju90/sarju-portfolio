@@ -1,8 +1,69 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { personalInfo } from "@/data/portfolio-data";
+
+// Typing Animation Component
+function TypingAnimation() {
+  const phrases = [
+    { text: "Transforming ideas into seamless digital experiences.", gradient: "from-blue-400 via-purple-400 to-pink-400" },
+    { text: "Building scalable and innovative web solutions.", gradient: "from-green-400 via-cyan-400 to-blue-400" },
+    { text: "Crafting elegant code with modern technologies.", gradient: "from-orange-400 via-red-400 to-pink-400" },
+    { text: "Creating responsive and user-friendly interfaces.", gradient: "from-purple-400 via-pink-400 to-rose-400" }
+  ];
+
+  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(100);
+
+  useEffect(() => {
+    const currentPhrase = phrases[currentPhraseIndex].text;
+
+    const handleTyping = () => {
+      if (!isDeleting) {
+        // Typing
+        if (currentText.length < currentPhrase.length) {
+          setCurrentText(currentPhrase.substring(0, currentText.length + 1));
+          setTypingSpeed(100);
+        } else {
+          // Pause before deleting
+          setTimeout(() => setIsDeleting(true), 2000);
+        }
+      } else {
+        // Deleting
+        if (currentText.length > 0) {
+          setCurrentText(currentPhrase.substring(0, currentText.length - 1));
+          setTypingSpeed(50);
+        } else {
+          // Move to next phrase
+          setIsDeleting(false);
+          setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);
+        }
+      }
+    };
+
+    const timer = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, currentPhraseIndex, typingSpeed]);
+
+  return (
+    <div className="mb-8">
+      
+      <p className="text-lg md:text-xl h-14 flex items-center justify-center">
+        <span className="inline-block">
+          <span className={`bg-gradient-to-r ${phrases[currentPhraseIndex].gradient} bg-clip-text text-transparent font-semibold`}>
+            {currentText}
+          </span>
+          <span className={`inline-block w-0.5 h-6 bg-gradient-to-b ${phrases[currentPhraseIndex].gradient} ml-1 animate-pulse`}></span>
+        </span>
+      </p>
+    </div>
+  );
+}
+
 
 export default function Hero() {
   return (
@@ -44,9 +105,7 @@ export default function Hero() {
             <p className="text-2xl md:text-3xl text-gray-300 mb-2">
               {personalInfo.title}
             </p>
-            <p className="text-lg md:text-xl text-gray-400 mb-8">
-              {personalInfo.tagline}
-            </p>
+            <TypingAnimation />
           </motion.div>
 
           {/* Core Skills */}

@@ -91,8 +91,7 @@ export default function Footer() {
           className="border-t border-white/10 pt-8 text-center"
         >
           <p className="text-gray-400 flex items-center justify-center gap-2">
-            © {currentYear} {personalInfo.name}. All rights reserved. Made with{" "}
-            <FaHeart className="text-red-500" /> using Next.js & TypeScript
+            © {currentYear} {personalInfo.name}. All rights reserved.
           </p>
         </motion.div>
       </div>

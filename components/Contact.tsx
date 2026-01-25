@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { personalInfo } from "@/data/portfolio-data";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import CodeMantraTyping from "./CodeMantra";
 
 export default function Contact() {
   return (
@@ -117,20 +118,6 @@ export default function Contact() {
             </div>
           </motion.div>
         </div>
-
-        {/* Dev Wisdom Quote */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center glass-effect rounded-xl p-8 max-w-3xl mx-auto"
-        >
-          <h3 className="text-xl font-bold mb-4 gradient-text">Code Mantra</h3>
-          <p className="text-2xl italic text-gray-300">
-            "Building scalable solutions with clean architecture and pixel-perfect precision."
-          </p>
-        </motion.div>
       </div>
     </section>
   );

@@ -50,31 +50,134 @@ export const skills: Skill[] = [
 
 export const projects: Project[] = [
   {
+    title: "Asset & Work Order Management Platform", // QUIQFLOW
+    description: "A SaaS-based platform for streamlining assets, work orders, and team management across multiple locations.",
+    techStack: ["Next.js", "TypeScript", "Semantic UI", "ApexCharts", "Firebase", "Context API"],
+    category: "SaaS Platform",
+    longDescription: "A powerful SaaS-based platform designed to streamline asset, part, people, and work order management across multiple locations. It empowers organizations to efficiently assign tasks, monitor team performance, and manage inventories with location-based precision. With a robust role-based permission system, users have access strictly according to their roles, enhancing data integrity and control.",
+    features: [
+      "Frontend with role and permission based access structure",
+      "Built using Semantic UI React for a consistent, responsive design",
+      "React ApexCharts integration for advanced data visualization",
+      "Firebase integration for real-time push notifications",
+      "Localization and RTL Support",
+      "State management via Context API for efficient app flow"
+    ],
+    isNDA: true
+  },
+  {
+    title: "B2B & B2C E-commerce Platform", // KMQ
+    description: "A dynamic e-commerce platform catering to everyday needs with real-time sync and role-specific pricing.",
+    techStack: ["React.js", "Node.js", "Rest API"],
+    category: "E-commerce",
+    longDescription: "A dynamic B2B and B2C e-commerce platform designed to cater to a wide range of everyday needs. Built for a seamless shopping experience, the platform features intuitive navigation, regional customization, and a user-friendly interface. It supports multiple local payment gateways, real-time stock syncing via cron jobs, and custom Excel reporting.",
+    features: [
+      "B2B & B2C customer support with role-specific pricing",
+      "Local payment gateway integrations",
+      "Real-time stock and pricing updates via third-party APIs",
+      "Scheduled cron jobs for live data syncing",
+      "Custom Excel report and order summary generation"
+    ],
+    isNDA: true
+  },
+  {
+    title: "Luxury Resort Booking System", // Pitka Bay
+    description: "A specialized resort booking platform for reserving marinas, boats, rooms, and event spaces.",
+    techStack: ["React.js", "Node.js", "PayFast"],
+    category: "Hospitality",
+    longDescription: "A specialized resort booking platform designed for an exclusive location. It allows users to seamlessly book facilities such as marinas, boats, rooms, and event spaces directly through the website. The platform supports two panels—Admin and Client—for efficient management, personalized bookings, and secure online payments.",
+    features: [
+      "Dual-panel system: Admin and Client dashboards",
+      "Calendar-based booking system for real-time availability",
+      "Secure PayFast integration for seamless online payments",
+      "Real-time facility status and availability updates",
+      "Role-based management for booking approvals"
+    ],
+    isNDA: true
+  },
+  {
+    title: "AI-Driven Resource Management Platform", // Mosaic
+    description: "An advanced AI-driven resource management platform designed to help businesses optimize project planning.",
+    techStack: ["React", "Redux", "TypeScript", "Ant Design", "Styled Components", "TanStack Query", "Cypress"],
+    category: "Resource Management",
+    longDescription: "Mosaic is a comprehensive resource and project management software designed to optimize team productivity, enhance project profitability, and streamline operations. It features predictive resource demand forecasting, smart team assignments, Gantt charts for project planning, and real-time analytics dashboards.",
+    features: [
+      "Resource Planning & Capacity Management for balanced distribution",
+      "Project Planning with Gantt charts and task dependencies",
+      "Budget & Time Tracking for financial control",
+      "Real-time Reporting & Dashboards",
+      "Templates & Automation for streamlining workflows",
+      "Team Collaboration tools",
+      "Integrations with QuickBooks and Asana"
+    ],
+    isNDA: true
+  },
+  {
     title: "Smarty Shop",
-    description: "A scalable e-commerce platform with responsive UI.",
-    techStack: ["React.js", "Next.js", "TypeScript", "Tailwind CSS"],
+    description: "A feature-rich e-commerce platform designed for performance and scalability.",
+    techStack: ["React.js", "Next.js", "TypeScript", "Redux Toolkit", "Tailwind CSS"],
     liveUrl: "https://smarty-shop.vercel.app/",
-    category: "E-commerce"
+    category: "E-commerce",
+    longDescription: "Smarty Shop is a modern, high-performance e-commerce application built to deliver a seamless shopping experience. It features a responsive design that adapts perfectly to all devices, an intuitive product catalog with advanced filtering, and a robust cart management system. The platform focuses on speed, accessibility, and user engagement, making online shopping effortless and enjoyable.",
+    features: [
+      "Responsive & Mobile-First Design for all devices",
+      "Dynamic Product Catalog with categories and filters",
+      "Real-time Cart Management with localized state",
+      "Seamless Checkout Process simulation",
+      "Optimized Performance using Next.js Image and SSR",
+      "Interactive UI components with smooth animations"
+    ],
+    isNDA: false
   },
   {
     title: "EventHive",
-    description: "An advanced event management platform allowing users to organize, track, and manage events effortlessly.",
-    techStack: ["Next.js", "TypeScript", "MongoDB", "Stripe"],
+    description: "A comprehensive event management solution for organizing and tracking events.",
+    techStack: ["Next.js", "TypeScript", "MongoDB", "Stripe", "NextAuth"],
     liveUrl: "https://sarju-eventhive.vercel.app/",
-    category: "Event Management"
+    category: "Event Management",
+    longDescription: "EventHive is an advanced event management platform that empowers users to create, discover, and manage events with ease. It integrates secure payment processing with Stripe, robust user authentication, and a dynamic database for real-time event tracking. Whether organizing a small meetup or a large conference, EventHive provides the tools needed for success.",
+    features: [
+      "Secure User Authentication via Clerk/NextAuth",
+      "Create, Update, and Delete Events with rich text editors",
+      "Integrated Stripe Payments for ticket sales",
+      "Advanced Search & Filtering for finding events",
+      "User Dashboard for managing booked and organized events",
+      "Responsive Layout tailored for mobile and desktop"
+    ],
+    isNDA: false
   },
   {
     title: "Shofy",
-    description: "A complete full-stack E-commerce platform with modern UI, seamless shopping experience, and secure payment integration.",
-    techStack: ["Next.js", "TypeScript", "MongoDB", "Stripe", "Redux"],
+    description: "A premium full-stack e-commerce solution with admin dashboard and secure payments.",
+    techStack: ["Next.js", "TypeScript", "MongoDB", "Stripe", "Redux", "Cloudinary"],
     liveUrl: "https://shofy-frontend.vercel.app/",
-    category: "E-commerce"
+    category: "E-commerce",
+    longDescription: "Shofy is a complete full-stack e-commerce ecosystem featuring a modern storefront and a powerful admin dashboard. It supports secure payment gateways, order tracking, and inventory management. Designed with a focus on UX/UI, Shofy ensures a premium shopping experience while providing merchants with the tools to manage their business efficiently.",
+    features: [
+      "Full-Stack Architecture with dedicated Admin Panel",
+      "Secure Payment Processing with Stripe integration",
+      "Order Tracking & History for customers",
+      "Inventory & Product Management for admins",
+      "Cloudinary integration for optimized image media",
+      "Global State Management using Redux Toolkit"
+    ],
+    isNDA: false
   },
   {
     title: "Portfolio Website",
-    description: "A personal portfolio showcasing my skills, projects, and experiences in web development.",
+    description: "A personal showcase of professional work, skills, and technical expertise.",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    category: "Portfolio"
+    category: "Portfolio",
+    longDescription: "This portfolio website is a personal brand showcase designed to highlight technical skills, professional experience, and creative projects. Built with modern web technologies, it features smooth page transitions, interactive elements, and a clean, dark-themed aesthetic that reflects a commitment to high-quality design and code.",
+    features: [
+      "Modern & Clean Dark UI with aesthetic gradients",
+      "Smooth Page Transitions using Framer Motion",
+      "Fully Responsive Design for all screen sizes",
+      "SEO Optimized content and metadata",
+      "Interactive Project Gallery with detailed modals",
+      "Contact integration and social media links"
+    ],
+    isNDA: false
   }
 ];
 

@@ -91,7 +91,7 @@ export default function Education() {
               onClick={() => setActiveTab(tab.id)}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className={`flex items-center gap-3 px-4 sm:px-6 py-4 rounded-xl transition-all duration-300 w-full md:min-w-[280px] md:flex-1 ${activeTab === tab.id
+              className={`flex cursor-pointer items-center gap-3 px-4 sm:px-6 py-4 rounded-xl transition-all duration-300 w-full md:min-w-[280px] md:flex-1 ${activeTab === tab.id
                 ? "bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg shadow-purple-500/30"
                 : "glass-effect hover:bg-white/10"
                 }`}
@@ -261,16 +261,20 @@ function ProfessionalContent({ data }: { data: typeof education.professional }) 
       className="grid grid-cols-1 md:grid-cols-2 gap-6"
     >
       {data.map((item, index) => (
-        <motion.div
+        <motion.a
           key={index}
+          href={item.credentialUrl || '#'}
+          target="_blank"
+          rel="noopener noreferrer"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
-          className="glass-effect rounded-2xl p-4 sm:p-6 hover:bg-white/5 transition-all duration-300 group"
+          whileHover={{ scale: 1.03, y: -5, transition: { duration: 0.2 } }}
+          className="glass-effect rounded-2xl p-4 sm:p-6 hover:bg-white/5 hover:border-amber-500/30 border border-transparent transition-all duration-300 group cursor-pointer block"
         >
           <div className="flex items-start justify-between gap-3 mb-4">
             <div className="flex items-start gap-3 min-w-0 flex-1">
-              <div className="w-12 h-12 flex-shrink-0 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center border border-amber-500/30">
+              <div className="w-12 h-12 flex-shrink-0 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center border border-amber-500/30 group-hover:scale-110 transition-transform duration-300">
                 <FaAward className="text-xl text-amber-400" />
               </div>
               <div className="min-w-0 flex-1">
@@ -282,14 +286,9 @@ function ProfessionalContent({ data }: { data: typeof education.professional }) 
               </div>
             </div>
             {item.credentialUrl && (
-              <a
-                href={item.credentialUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-amber-400 transition-colors flex-shrink-0"
-              >
+              <div className="text-gray-400 group-hover:text-amber-400 transition-all duration-300 flex-shrink-0 group-hover:translate-x-1 group-hover:-translate-y-1">
                 <FaExternalLinkAlt />
-              </a>
+              </div>
             )}
           </div>
 
@@ -311,7 +310,7 @@ function ProfessionalContent({ data }: { data: typeof education.professional }) 
               </div>
             </div>
           )}
-        </motion.div>
+        </motion.a>
       ))}
     </motion.div>
   );
@@ -328,16 +327,20 @@ function LifelongContent({ data }: { data: typeof education.lifelong }) {
       className="grid grid-cols-1 md:grid-cols-2 gap-6"
     >
       {data.map((item, index) => (
-        <motion.div
+        <motion.a
           key={index}
+          href={item.url || '#'}
+          target="_blank"
+          rel="noopener noreferrer"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
-          className="glass-effect rounded-2xl p-4 sm:p-6 hover:bg-white/5 transition-all duration-300 group"
+          whileHover={{ scale: 1.03, y: -5, transition: { duration: 0.2 } }}
+          className="glass-effect rounded-2xl p-4 sm:p-6 hover:bg-white/5 hover:border-cyan-500/30 border border-transparent transition-all duration-300 group cursor-pointer block"
         >
           <div className="flex items-start justify-between gap-3 mb-4">
             <div className="flex items-start gap-3 min-w-0 flex-1">
-              <div className={`w-12 h-12 flex-shrink-0 rounded-xl flex items-center justify-center border ${item.status === "completed"
+              <div className={`w-12 h-12 flex-shrink-0 rounded-xl flex items-center justify-center border group-hover:scale-110 transition-transform duration-300 ${item.status === "completed"
                 ? "bg-gradient-to-br from-emerald-500/20 to-green-500/20 border-emerald-500/30"
                 : "bg-gradient-to-br from-amber-500/20 to-yellow-500/20 border-amber-500/30"
                 }`}>
@@ -374,14 +377,9 @@ function LifelongContent({ data }: { data: typeof education.lifelong }) {
               </div>
             </div>
             {item.url && (
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-cyan-400 transition-colors flex-shrink-0"
-              >
+              <div className="text-gray-400 group-hover:text-cyan-400 transition-all duration-300 flex-shrink-0 group-hover:translate-x-1 group-hover:-translate-y-1">
                 <FaExternalLinkAlt />
-              </a>
+              </div>
             )}
           </div>
 
@@ -403,7 +401,7 @@ function LifelongContent({ data }: { data: typeof education.lifelong }) {
               </div>
             </div>
           )}
-        </motion.div>
+        </motion.a>
       ))}
     </motion.div>
   );
