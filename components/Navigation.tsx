@@ -83,7 +83,7 @@ export default function Navigation() {
               </motion.a>
             ))}
             <motion.a
-              href="https://drive.google.com/file/d/13-1AJc1rRbCTYd7b3wN18tr8PaIfc_5I/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1kIkyRKwbeghlwYsDnRX_1uLluBoLMOX_/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 flex items-center gap-2"

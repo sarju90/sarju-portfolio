@@ -275,6 +275,14 @@ export const education = {
   ],
   professional: [
     {
+      title: "Full Stack Development with MERN",
+      provider: "Cisco thingqBator",
+      year: "2024",
+      description: "Successfully completed an extensive training program focused on the MERN stack (MongoDB, Express.js, React, Node.js). Developed end-to-end full-stack applications with a focus on scalable architecture and modern web practices.",
+      skills: ["MongoDB", "Express.js", "React.js", "Node.js", "REST APIs", "MERN Stack"],
+      credentialUrl: "https://thingqbator.s3.ap-south-1.amazonaws.com/1769337342198_SarjuDharsandiya_Course-Excellence.pdf"
+    },
+    {
       title: "Advanced React.js Development",
       provider: "Meta (Facebook)",
       year: "2023",
