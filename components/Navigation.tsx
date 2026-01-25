@@ -124,13 +124,13 @@ export default function Navigation() {
               </a>
             ))}
             <a
-              href="https://drive.google.com/file/d/13-1AJc1rRbCTYd7b3wN18tr8PaIfc_5I/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1kIkyRKwbeghlwYsDnRX_1uLluBoLMOX_/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full font-semibold text-center flex items-center justify-center gap-2 w-full"
             >
               <FileText size={18} />
-              View CV
+               CV
             </a>
           </motion.div>
         )}
